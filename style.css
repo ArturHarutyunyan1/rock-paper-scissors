@@ -299,6 +299,7 @@ html,body{
     z-index: 99;
     bottom: 15px;
     left: 15px;
+    margin-top: 70px;
 }
 
 span a{
@@ -307,16 +308,16 @@ span a{
 
 @media (max-width: 768px){
     .author{
-        font-size: 10px;
+        font-size: 7px;
     }
 }
 
-@media (max-width: 500px){
+@media (max-width: 450px){
     .choice-item{
         width: 150px;
         height: 150px;
     }
     .play-again{
-        top: 600px;
+        top: 570px;
     }
 }
