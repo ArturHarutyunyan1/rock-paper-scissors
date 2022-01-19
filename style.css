@@ -277,6 +277,9 @@ html,body{
 #computer-choice{
     border: 20px solid #3d9690;
 }
+.choice-icon{
+    width: 70px;
+}
 @media (max-width:768px){
     .row-item h1{
         font-size: 20px;
