@@ -60,6 +60,11 @@ html,body{
         width: 100%;
     }
 }
+@media (max-width: 500px){
+    .choice{
+        width: 100px;
+    }
+}
 .user-choice{
     margin: 0 auto;
     width: 500px;
@@ -109,7 +114,20 @@ html,body{
 .btn-rock{
     border: 20px solid hsl(349, 70%, 56%);
 }
-
+@media (max-width: 450px){
+  .user-choice{
+      width: 100%;
+  }
+  .user-choice::after{
+      width: 50%;
+      height: 50%;
+  }
+  .choice{
+      width: 150px;
+      height: 150px;
+      margin: 0;
+  }
+}
 .open-btn{
     position: fixed;
     bottom: 15px;
@@ -290,5 +308,15 @@ span a{
 @media (max-width: 768px){
     .author{
         font-size: 10px;
+    }
+}
+
+@media (max-width: 500px){
+    .choice-item{
+        width: 150px;
+        height: 150px;
+    }
+    .play-again{
+        top: 600px;
     }
 }
