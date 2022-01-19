@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
+</head>
+<body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div class="main-container">
+        <div class="navigation">
+            <div class="title">
+                <h1>Rock</h1>
+                <h1>Paper</h1>
+                <h1>Scissors</h1>
+            </div>
+            <div class="flex-item">
+                <div class="score">
+                    <h1 style="color: hsl(229, 64%, 46%); font-size: 30px;">Score</h1>
+                    <h1 style="color: hsl(229, 25%, 31%); font-size: 40px;" class="score-value">0</h1>
+                </div>
+            </div>
+        </div>
+        <main>
+            <div class="container">
+                <div class="user-choice">
+                    <button class="choice btn-paper game-btn" data-choice="paper"><img class="icon" src="img/icon-paper.svg"></button>
+                    <button class="choice btn-scissors game-btn" data-choice="scissors"><img class="icon" src="img/icon-scissors.svg" alt=""></button>
+                    <button class="choice btn-rock game-btn" data-choice="rock"><img class="icon" src="img/icon-rock.svg" alt=""></button>
+                </div>
+            </div>
+        </main>
+        <div class="modal-btn">
+            <button class="open-btn">RULES</button>
+        </div>
+        <div class="modal">
+            <div class="modal-window">
+                <h1 style="position: absolute; top: 5px; left: 5px;">RULES</h1>
+                <div class="close">
+                    <button class="close-btn">
+                        <img src="img/icon-close.svg" alt="">
+                    </button>
+                </div>
+                <img src="img/image-rules.svg" alt="">
+            </div>
+        </div>
+        <div class="main-game">
+            <div class="main-container">
+                <div class="game">
+                    <div class="row">
+                        <div class="row-item">
+                            <h1>YOU PICKED</h1>
+                            <div class="choice-item">
+                                <button style="margin:0;" class="choice" id="user-choice"><img class="choice-icon" src="" alt=""></button>
+                            </div>
+                        </div>
+                        <div class="result">
+                            <h1 class="winner"></h1>
+                        </div>
+                        <div class="row-item">
+                            <h1>THE HOUSE PICKED</h1>
+                            <div class="choice-item">
+                                <button style="margin:0;" class="choice" id="computer-choice"><img class="choice-icon" src="" alt=""></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="play-again">Play Again</button>
+            </div>
+        </div>
+        <div class="author">
+            <h1>Developer <span><a href="https://github.com/ArturHarutyunyan1" target="_blank">Artur Harutyunyan</a></span></h1>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
