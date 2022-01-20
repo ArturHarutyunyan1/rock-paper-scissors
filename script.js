@@ -61,7 +61,7 @@ function selection(selectedEL, choicedEL){
 }
 
 playAgainButton.addEventListener('click', ()=>{
-    gameModal.classList.remove('game-active')
+    window.location.reload()
 })
 
 modalOpenButton.addEventListener('click', ()=>{
