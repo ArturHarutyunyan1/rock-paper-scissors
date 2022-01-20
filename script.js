@@ -1,7 +1,7 @@
 const modalOpenButton = document.querySelector('.open-btn')
 const modalCloseButton = document.querySelector('.close-btn')
 const modal = document.querySelector('.modal')
-const gameModal = document.querySelector('.main-game')
+const gameModal = document.querySelector('.game-container')
 const playAgainButton = document.querySelector('.play-again')
 const user = document.querySelector('#user-choice')
 const pc = document.querySelector('#computer-choice')
@@ -10,12 +10,12 @@ const choices = document.querySelectorAll('.game-btn')
 const winner = document.querySelector('.winner')
 let userChoice = undefined
 let userScoreValue = document.querySelector('.score-value')
-let score = 0
+let score = []
 
 choices.forEach(choice => {
     choice.addEventListener('click', ()=>{
         userChoice = choice.getAttribute('data-choice')
-        gameModal.classList.add('modal-active')
+        gameModal.classList.add('game-active')
         checkWinner()
     })
 })
@@ -27,6 +27,12 @@ function computerRandomChoice(){
 function updateValue(){
     score += 1
     userScoreValue.innerHTML = score
+    localStorage.setItem('userScore',score)
+}
+
+let value = localStorage.getItem('userScore', score)
+if(value){
+    userScoreValue.innerHTML = score = JSON.parse(localStorage.getItem('userScore', score))
 }
 
 function checkWinner(){
@@ -42,6 +48,7 @@ function checkWinner(){
         winner.innerHTML = 'YOU LOSE'
     }else if(userChoice === computerChoice){
         winner.innerHTML = 'TIE'
+        updateValue(1)
     }
 }
 
@@ -49,12 +56,13 @@ function selection(selectedEL, choicedEL){
     selectedEL.classList.remove('rock')
     selectedEL.classList.remove('paper')
     selectedEL.classList.remove('scissors')
+    selectedEL.classList.add(`btn-${choicedEL}`)
     const img = selectedEL.querySelector('img')
     img.src = `./img/icon-${choicedEL}.svg`
 }
 
 playAgainButton.addEventListener('click', ()=>{
-    gameModal.classList.remove('modal-active')
+    gameModal.classList.remove('game-active')
 })
 
 modalOpenButton.addEventListener('click', ()=>{

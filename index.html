@@ -9,7 +9,6 @@
     <link rel="shortcut icon" href="img/favicon-32x32.png" type="image/x-icon">
 </head>
 <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
     <div class="main-container">
         <div class="navigation">
             <div class="title">
@@ -47,34 +46,31 @@
                 <img src="img/image-rules.svg" alt="">
             </div>
         </div>
-        <div class="main-game">
-            <div class="main-container">
-                <div class="game">
-                    <div class="row">
-                        <div class="row-item">
-                            <h1>YOU PICKED</h1>
-                            <div class="choice-item">
-                                <button style="margin:0;" class="choice" id="user-choice"><img class="choice-icon" src="" alt=""></button>
-                            </div>
-                        </div>
-                        <div class="result">
-                            <h1 class="winner"></h1>
-                        </div>
-                        <div class="row-item">
-                            <h1>THE HOUSE PICKED</h1>
-                            <div class="choice-item">
-                                <button style="margin:0;" class="choice" id="computer-choice"><img class="choice-icon" src="" alt=""></button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <button class="play-again">Play Again</button>
-            </div>
-        </div>
         <div class="author">
             <h1>Developer <span><a href="https://github.com/ArturHarutyunyan1" target="_blank">Artur Harutyunyan</a></span></h1>
         </div>
     </div>
+    <div class="game-container">
+        <div class="game">
+            <div>
+                <h1 class="title">YOU PICKED</h1>
+                <button class="choice choiced-items" id="user-choice">
+                    <img class="icon" src="" alt="">
+                </button>
+            </div>
+            <div class="result">
+                <h1 class="winner">YOU WIN</h1>
+                <button class="play-again">Play Again</button>
+            </div>
+            <div>
+                <h1 class="title">THE HOUSE PICKED</h1>
+                <button class="choice  choiced-items" id="computer-choice">
+                    <img class="icon" src="" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
     <script src="script.js"></script>
 </body>
 </html>
