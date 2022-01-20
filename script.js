@@ -8,8 +8,12 @@ const pc = document.querySelector('#computer-choice')
 const computerChoiceList = ['rock', 'paper', 'scissors']
 const choices = document.querySelectorAll('.game-btn')
 const winner = document.querySelector('.winner')
-let userChoice = undefined
+const resetModalBtn = document.querySelector('.reset-btn')
+const resetButton = document.querySelector('#reset')
+const closeResetModal = document.querySelector('#close')
+const resetWindow = document.querySelector('.reset-modal')
 let userScoreValue = document.querySelector('.score-value')
+let userChoice = undefined
 let score = []
 
 choices.forEach(choice => {
@@ -33,6 +37,15 @@ function updateValue(){
 let value = localStorage.getItem('userScore', score)
 if(value){
     userScoreValue.innerHTML = score = JSON.parse(localStorage.getItem('userScore', score))
+    resetModalBtn.style.display = 'block'
+}else{
+    resetModalBtn.style.display = 'block'
+}
+
+if(score >= 1){
+    resetModalBtn.style.display = 'block'
+}else{
+    resetModalBtn.style.display = 'none '
 }
 
 function checkWinner(){
@@ -62,6 +75,19 @@ function selection(selectedEL, choicedEL){
 
 playAgainButton.addEventListener('click', ()=>{
     window.location.reload()
+})
+
+resetModalBtn.addEventListener('click', ()=>{
+    resetWindow.classList.add('active')
+})
+resetButton.addEventListener('click', ()=>{
+    resetWindow.classList.remove('active')
+    localStorage.clear('userScore', score)
+    window.location.reload()
+})
+
+closeResetModal.addEventListener('click', ()=>{
+    resetWindow.classList.remove('active')
 })
 
 modalOpenButton.addEventListener('click', ()=>{

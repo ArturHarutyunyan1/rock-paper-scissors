@@ -214,9 +214,7 @@ html,body{
     position: fixed;
     background: radial-gradient(circle at 50% 0%, hsl(214, 47%, 23%), hsl(237, 49%, 15%));
     z-index: 99;
-    transform: translateY(100%);
-    transition: 1s cubic-bezier(1, 0, 0, 1);
-    visibility: hidden;
+    display: none;
 }
 
 #user-choice{
@@ -282,18 +280,115 @@ html,body{
 }
 
 .game-active{
-    transform: translateY(0);
-    visibility: visible;
+    display: flex;
 }
 
 .author{
     position: fixed;
     bottom: 15px;
     left: 15px;
-    font-size: 11px;
+    font-size: 7px;
     color: white;
 }
 
 span a{
     color: white;
+}
+
+.reset-btn{
+    position: fixed;
+    bottom: 90px;
+    right: 15px;
+    width: 150px;
+    height: 50px;
+    background-color: transparent;
+    border: 3px solid rgb(255, 54, 54);
+    color: rgb(255, 54, 54);
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: 0.7s ease-in-out;
+    display: none;
+}
+
+.reset-btn:hover{
+    background-color: rgb(255, 54, 54);
+    color: white;
+}
+
+.reset-modal{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    background-color: rgba(0,0,0,0.4);
+    display: none;
+}
+
+.reset-window{
+    width: 40%;
+    height: 200px;
+    background-color: white;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 33px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.row{
+    width: 100%;
+    display: flex;
+}
+
+.row-item{
+    margin: 5px auto;
+}
+
+#close{
+    width: 200px;
+    height: 50px;
+    background-color: rgb(218, 218, 218);
+    cursor: pointer;
+    border:none;
+    border-radius: 15px;
+
+}
+
+#reset{
+    width: 200px;
+    height: 50px;
+    background-color: rgb(255, 54, 54);
+    border:none;
+    border-radius: 15px;
+    color: white;
+    cursor: pointer;
+}
+
+.active{
+    display: flex;
+}
+
+@media (max-width: 980px){
+    .reset-window{
+        font-size: 35px;
+        width: 90%;
+    }
+    #reset, #close{
+        width: 200px;
+    }
+}
+
+@media (max-width: 500px){
+    #reset, #close{
+        width: 100px;
+    }
 }
