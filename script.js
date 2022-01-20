@@ -48,7 +48,6 @@ function checkWinner(){
         winner.innerHTML = 'YOU LOSE'
     }else if(userChoice === computerChoice){
         winner.innerHTML = 'TIE'
-        updateValue(1)
     }
 }
 
