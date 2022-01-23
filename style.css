@@ -22,7 +22,7 @@ html,body{
 }
 
 .navigation{
-    width: 50%;
+    width: 60%;
     height: 150px;
     position: fixed;
     top: 15px;
@@ -53,6 +53,16 @@ html,body{
     font-size: 22px;
     font-weight: 700;
     border-radius: 15px;
+    margin: 10px;
+}
+
+.score-title{
+    color: hsl(229, 64%, 46%);
+     font-size: 30px;
+}
+.user-score, .computer-score{
+    color: hsl(229, 25%, 31%);
+    font-size: 40px;
 }
 
 @media (max-width: 768px){
@@ -63,6 +73,12 @@ html,body{
 @media (max-width: 500px){
     .choice{
         width: 100px;
+    }
+    .score{
+        width: 90px;
+    }
+    .score-title{
+        font-size: 20px;
     }
 }
 .user-choice{
@@ -350,11 +366,12 @@ span a{
 }
 
 .row-item{
+    width: 100%;
     margin: 5px auto;
 }
 
 #close{
-    width: 200px;
+    width: 250px;
     height: 50px;
     background-color: rgb(218, 218, 218);
     cursor: pointer;
@@ -364,7 +381,7 @@ span a{
 }
 
 #reset{
-    width: 200px;
+    width: 250px;
     height: 50px;
     background-color: rgb(255, 54, 54);
     border:none;
@@ -389,6 +406,6 @@ span a{
 
 @media (max-width: 500px){
     #reset, #close{
-        width: 100px;
+        width: 120px;
     }
 }

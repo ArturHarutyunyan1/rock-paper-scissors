@@ -12,9 +12,11 @@ const resetModalBtn = document.querySelector('.reset-btn')
 const resetButton = document.querySelector('#reset')
 const closeResetModal = document.querySelector('#close')
 const resetWindow = document.querySelector('.reset-modal')
-let userScoreValue = document.querySelector('.score-value')
+let userScoreValue = document.querySelector('.user-score')
+let computerScoreValue = document.querySelector('.computer-score')
 let userChoice = undefined
-let score = []
+let userScore = []
+let computerScore = []
 
 choices.forEach(choice => {
     choice.addEventListener('click', ()=>{
@@ -28,21 +30,27 @@ function computerRandomChoice(){
     return computerChoiceList[Math.floor(Math.random() * computerChoiceList.length)]
 }
 
-function updateValue(){
-    score += 1
-    userScoreValue.innerHTML = score
-    localStorage.setItem('userScore',score)
+function updateUserValue(){
+    userScore += 1
+    userScoreValue.innerHTML = userScore
+    localStorage.setItem('userScore',userScore)
 }
 
-let value = localStorage.getItem('userScore', score)
-if(value){
-    userScoreValue.innerHTML = score = JSON.parse(localStorage.getItem('userScore', score))
-    resetModalBtn.style.display = 'block'
-}else{
-    resetModalBtn.style.display = 'block'
+function updateComputerValue(){
+    computerScore += 1
+    computerScoreValue.innerHTML = computerScore
+    localStorage.setItem('computerScore', computerScore)
 }
 
-if(score >= 1){
+let userValue = localStorage.getItem('userScore', userScore)
+let computerValue = localStorage.getItem('computerScore', computerScore)
+if(userValue){
+    userScoreValue.innerHTML = userScore = JSON.parse(localStorage.getItem('userScore', userScore))}else{
+}
+if(computerValue){
+    computerScoreValue.innerHTML = computerScore = JSON.parse(localStorage.getItem('computerScore', computerScore))
+}
+if(userScore >= 1 || computerScore >= 1){
     resetModalBtn.style.display = 'block'
 }else{
     resetModalBtn.style.display = 'none '
@@ -53,12 +61,11 @@ function checkWinner(){
     selection(user, userChoice)
     selection(pc, computerChoice)
     if(userChoice === 'rock' && computerChoice === 'scissors' || userChoice === 'scissors' && computerChoice === 'paper' || userChoice === 'paper' && computerChoice === 'rock'){
-        updateValue(1)
+        updateUserValue(1)
         winner.innerHTML = 'YOU WIN'
-        console.log(computerRandomChoice());
     }else if(userChoice === 'rock' && computerChoice === 'paper' || userChoice === 'paper' && computerChoice === 'scissors' || userChoice === 'scissors' && computerChoice === 'rock'){
-        console.log(computerRandomChoice());
         winner.innerHTML = 'YOU LOSE'
+        updateComputerValue(1)
     }else if(userChoice === computerChoice){
         winner.innerHTML = 'TIE'
     }
@@ -82,7 +89,8 @@ resetModalBtn.addEventListener('click', ()=>{
 })
 resetButton.addEventListener('click', ()=>{
     resetWindow.classList.remove('active')
-    localStorage.clear('userScore', score)
+    localStorage.clear('userScore', userScore)
+    localStorage.clear('computerScore', computerScore)
     window.location.reload()
 })
 
