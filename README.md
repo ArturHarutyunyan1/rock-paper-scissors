@@ -1,7 +1,5 @@
 # Frontend Mentor - Rock, Paper, Scissors solution
 
-This is a solution to the [Rock, Paper, Scissors challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
-
 ## Table of contents
 
 - [Overview](#overview)
@@ -35,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH)
-- Live Site URL: [Add live site URL here](https://arturharutyunyan1.github.io/rock-paper-scissors/)
+- [Solution](https://www.frontendmentor.io/challenges/rock-paper-scissors-game-pTgwgvgH)
+- [Live site](https://arturharutyunyan1.github.io/rock-paper-scissors/)
 
 ## My process
 
@@ -50,7 +48,7 @@ Users should be able to:
 
 
 ## Author
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/ArturHarutyunyan1)
+- Frontend Mentor - [@ArturHarutyunyan1](https://www.frontendmentor.io/profile/ArturHarutyunyan1)
 
 
 
